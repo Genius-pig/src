@@ -29,12 +29,23 @@ private:
 	char *pool_;
 };
 
+BigMemoryPool get_pool(const BigMemoryPool& pool)
+{
+    return pool;
+}
+
+BigMemoryPool make_pool()
+{
+    BigMemoryPool pool;
+    return get_pool(pool);
+}
+
 int main()
 {
 	auto start = std::chrono::high_resolution_clock::now();
-	for (int i = 0; i < 1000000; i++) {
+//	for (int i = 0; i < 1000000; i++) {
 		BigMemoryPool my_pool = make_pool();
-	}
+//	}
 	auto end = std::chrono::high_resolution_clock::now();
 	std::chrono::duration<double> diff = end - start;
 	std::cout << "Time to call make_pool :" << diff.count() << " s" << std::endl;

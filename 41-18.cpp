@@ -1,3 +1,4 @@
+#include "iostream"
 template <class C>
 concept IntegerType = std::is_integral_v<C>;
 

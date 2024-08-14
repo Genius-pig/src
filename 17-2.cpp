@@ -1,4 +1,5 @@
 #include <vector>
+#include "iostream"
 struct X
 {
 	X() { std::cout << "default ctor" << std::endl; }
